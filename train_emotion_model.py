@@ -32,7 +32,7 @@ transform = transforms.Compose([
 
 # ✅ Use raw string to avoid unicode errors
 train_data = datasets.ImageFolder(
-    r"C:\Users\gagan\OneDrive\Desktop\NeuroWell\data\fer2013\train",
+    r"data\fer2013\train",
     transform=transform
 )
 train_loader = DataLoader(train_data, batch_size=64, shuffle=True)
@@ -57,5 +57,5 @@ for epoch in range(20):
     print(f"Epoch {epoch+1}: Loss = {total_loss:.4f}")
 
 # 5. Save the model (✅ fixed path)
-torch.save(model.state_dict(), r"C:\Users\gagan\OneDrive\Desktop\NeuroWell\models\emotion_cnn.pth")
+torch.save(model.state_dict(), r"models\emotion_cnn.pth")
 print("✅ Model trained and saved!")
